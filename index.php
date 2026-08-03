@@ -914,7 +914,7 @@ body{
           </li>
           <?php
           if (isset($_SESSION['name'])) {
-            if ($_SESSION['user_type'] == 'admin') {
+            if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin') {
               echo '<li class="nav-item">
                             <a class="nav-link" href="./views/admin/dashboard.php" title="Admin Dashboard"><i class="fa-solid fa-user-shield"></i></a>                            
                           </li>';

@@ -62,7 +62,7 @@ $current = basename($_SERVER['PHP_SELF']);
           </li>
           <?php
           if (isset($_SESSION['name'])) {
-            if ($_SESSION['user_type'] == 'admin') {
+            if ($_SESSION['role'] == 'admin') {
               echo '<li class="nav-item">
                             <a class="nav-link" href="./admin/dashboard.php" title="Admin Dashboard"><i class="fa-solid fa-user-shield"></i></a>                            
                           </li>';

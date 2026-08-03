@@ -9,7 +9,7 @@ $error = '';
 // Handle user type update
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user_id'], $_POST['user_type'])) {
     $user_id = intval($_POST['user_id']);
-    $user_type = $_POST['user_type'] === 'admin' ? 'admin' : 'user';
+    $user_type = $_POST['role'] === 'admin' ? 'admin' : 'user';
     $stmt = $conn->prepare('UPDATE users SET role = :user_type WHERE id = :id');
     $stmt->bindParam(':user_type', $user_type);
     $stmt->bindParam(':id', $user_id, PDO::PARAM_INT);

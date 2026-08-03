@@ -1,10 +1,17 @@
 <?php
+if(session_status() == PHP_SESSION_NONE){
+    session_start();
+}
+
 $current = basename($_SERVER['PHP_SELF']);
 
-// Get admin info if available
-$admin_name = isset($_SESSION['admin_name']) ? $_SESSION['admin_name'] : 'Admin';
-$admin_email = isset($_SESSION['admin_email']) ? $_SESSION['admin_email'] : '';
-$admin_id = isset($_SESSION['admin_id']) ? $_SESSION['admin_id'] : '';
+// Get admin info safely
+$admin_name = isset($_SESSION['name']) ? $_SESSION['name'] : 'Admin';
+$admin_email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
+$admin_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '';
+
+$user_role = isset($_SESSION['role']) ? $_SESSION['role'] : '';
+
 ?>
 
 <style>
@@ -283,7 +290,9 @@ $admin_id = isset($_SESSION['admin_id']) ? $_SESSION['admin_id'] : '';
             <?php if (!empty($admin_email)): ?>
             <p class="admin-email"><?php echo htmlspecialchars($admin_email); ?></p>
             <?php endif; ?>
-            <span class="admin-role">Administrator</span>
+         <span class="admin-role">
+    <?php echo htmlspecialchars(ucfirst($user_role)); ?>
+</span>
         </div>
           <ul class="nav flex-column w-100 mb-4">
             <li class="nav-item">
