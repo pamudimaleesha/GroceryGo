@@ -33,13 +33,7 @@ GroceryGo.lk is a comprehensive online grocery shopping platform for Sri Lanka. 
   - Contact form for customer inquiries
   - Responsive slider for promotional content
  
-    ## Screenshots
-    ### Homepage ![Homepage](grocery/screenshots/home.png)
-    ### Shop Page ![Shop Page](grocery/screenshots/shopPage.png)
-    ### Cart Page ![Cart Page](grocery/screenshots/Cartpage.png)
-    ### About Page ![About Page](grocery/screenshots/AboutPage.png)
-    ### Contact Page ![Contact Page](grocery/screenshots/Contactt.png)
-    ### Admin Dashboard ![Admin Dashboard](grocery/screenshots/AdminDashboard.png)
+
 
 ## Project Structure
 
